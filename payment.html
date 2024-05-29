@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="payment.css">
+    
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Payment</h2>
+        <form id="paymentForm">
+            <input type="text" name="cardholder" placeholder="Cardholder Name" required>
+            <input type="text" name="cardnumber" placeholder="Card Number" required>
+            <input type="text" name="expdate" placeholder="Expiry Date (MM/YY)" required>
+            <input type="text" name="cvv" placeholder="CVV" required>
+            <button type="submit">Pay Now</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Perform validation if necessary
+            const cardholder = event.target.cardholder.value;
+            const cardnumber = event.target.cardnumber.value;
+            const expdate = event.target.expdate.value;
+            const cvv = event.target.cvv.value;
+
+            // For demonstration purposes, we'll assume any non-empty fields are valid
+            if (cardholder && cardnumber && expdate && cvv) {
+                // Redirect to a confirmation page or display a success message
+                alert('Payment successful!'); // Replace this with redirection if needed
+                window.location.href = 'educart.html'; // Uncomment and set the correct path if you have a confirmation page
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+    </script>
+
+   
+</body>
+</html>
